@@ -1,3 +1,4 @@
+package com.shuai.test;
 /**
  * Derived类的Derived(int num)构造函数是否会被触发？为什么？
  */

@@ -1,3 +1,4 @@
+package com.shuai.test;
 
 import java.util.Iterator;
 import java.util.LinkedList;
