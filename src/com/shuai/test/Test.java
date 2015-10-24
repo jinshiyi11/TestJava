@@ -1,8 +1,7 @@
 package com.shuai.test;
 
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,6 +13,15 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		for(int i=0;i<100;i++){
+			System.out.println(generateRandomPassword());
+		}
+		
+		test();
+		String num="7天";
+		float parsedFloat = Float.parseFloat(num.replaceAll("[^0-9.]",""));
+		
+		
 		String xxs=String.format("haha:%s rr", null);
 		String yxs="haha"+null;
 		
@@ -53,5 +61,25 @@ public class Test {
 
 		System.out.println();
 	}
+	
+	private static void test(){
+		String regex="^http://m.wiixiaobao.com[/]?$";
+		String url="http://m.wiixiaobao.com/q";
+		Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(url);
+        if (matcher.find()) {
+        	System.out.println("match");
+        }
+	}
+	
+	public static String generateRandomPassword(){
+    	StringBuilder builder=new StringBuilder();
+    	Random random=new Random();
+    	for(int i=0;i<8;i++){
+    		builder.append((char)('a'+random.nextInt(26)));
+    	}
+    	
+    	return builder.toString();
+    }
 
 }
